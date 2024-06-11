@@ -30,15 +30,15 @@ However, when you try to use the app, you soon realize it's far more cumbersome 
 
 3. Gather the distributed\_statement\_id and query execution date and time from Query Insights (or capture it through another method of your choosing).
 
-![](./query-insights.png)
+![](query-insights.png)
 
 3. In the capacity metrics app, navigate to a time point that is at least 15 minutes after the query finished running.
 
-![](./capacity-metrics-home.png)
+![](capacity-metrics-home.png)
 
 4. Filter the background operations table to just the operations you want to see (Operation Id = distributed\_statement\_id).
 
-![](./capacity-metrics-detail.png)
+![](capacity-metrics-detail.png)
 
 It's step number 3 and 4 that cause the most pain and what we will address here today programmatically. Step 3 is just confusing for people because you need to wait for the query to show up in the report, but you need to go to "someplace after the query finishes running", usually 10-15 minutes, and find the query there. Step 4 is the bigger challenge because you need to get the list of IDs in step 2 then search for one of them in the filter in step 4, click the check the box, go back to step 2 to copy the next ID, search for it, and repeat that over for each query's distributed statement id.
 
@@ -91,7 +91,7 @@ GROUP BY
 
 The output from this query will provide the date the queries were executed, how many matched the subquery criteria, and the complete string of query ids. You will want to copy the ExecutionDate and the corresponding OperationIDList for the next step.
 
-![](./query-id-list.png)
+![](query-id-list.png)
 
 For the screenshots later in this post, I chose the 14 queries that were run on May 13th.
 
@@ -128,7 +128,7 @@ That's it. Run it!
 
 After the notebook runs, scroll down to the very last cell where the dataframe will display each distributed\_statement\_id (this is the OperationID field in Capacity Metrics) the total CUs consumed by that query and some additional information.
 
-![](./query-cus.png)
+![](query-cus.png)
 
 Here you can see the total CUs for each of the 14 queries from step 2.
 
