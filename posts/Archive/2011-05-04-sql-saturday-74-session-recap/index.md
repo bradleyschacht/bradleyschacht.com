@@ -1,0 +1,28 @@
+---
+title: "SQL Saturday #74 Session Recap"
+date: "2011-05-04"
+categories: 
+  - "speaking"
+---
+
+Hopefully if you came to my session this year at SQL Saturday in Jacksonville, FL you came away with some small piece of knowledge you didn't have when you walked into the room. If nothing else you now know that there is a phenomenon known as [Robocop on a Unicorn](http://www.google.com/search?q=robo+cop+on+a+unicorn&oe=utf-8&rls=org.mozilla:en-US:official&client=firefox-a&um=1&ie=UTF-8&tbm=isch&source=og&sa=N&hl=en&tab=wi&biw=1680&bih=946 "Robocop on a Unicorn"). On to the good stuff, the recap. Don't be afraid of SSIS, but don't use it for everything.  Be sure to choose the right tool for the job at hand.  SSIS can do a lot of things very well, but that doesn't mean that it SHOULD do certain things.  You don't need to turn every SQL Agent Job into an SSIS package to turn around and reschedule the SSIS package in a job.  At the same time you also shouldn't do EVERYTHING in stored procedures just so you don't have to use SSIS.  There is a fine line you must walk when choosing the right tool.  Evaluate. Decide. Plan. Reevaluate. Control flow:
+
+1. Process based - one task must complete before the next will begin
+2. Flow is controlled by precedence constraints
+3. Precedence constraints can be set to allow the package to continue on success, failure or completion regardless of the result
+4. Precedence constraints can also use expressions and variables to control the flow of events
+5. Items can run in parallel and these sets can act independently of each other
+6. Consists of tasks, one of which is the data flow
+
+![](https://images.bradleyschacht.com/wp-content/uploads/2011/05/ControlFlow.png) Data Flow:
+
+1. Consists of three part: Source, Transformation and Destination
+2. Sources and destinations can be a variety of objects: SQL, Oracle, Flat file, Excel file, etc.
+3. Data is brought into memory and processed according to the transforms you add
+4. DO NOT USE SELECT \* FROM TABLE
+5. It's also a bad idea to just pick a table from the drop down menu
+6. Avoid fully blocking transforms like the Aggregate by doing these functions in the source query when possible
+7. Using the source query to aggregate and sort data  can allow you to take advantage of things like indexes that aren't available when reading the data into memory and sorting
+8. Why pull 12 million records in order to load 3?  Why not pull 3 records to load 3 records?
+
+Notice in this data flow that the aggregate transform (called Group by Store) is not allowing any records to pass while the derived column and other transforms let data keep going.  Transforms like the aggregate require all data to be present in order to work.  So while the aggregate is holding up the works the stage table for the rest of the data is fully loaded.  The aggregate transform is going to increase the processing time for the entire data flow. ![](https://images.bradleyschacht.com/wp-content/uploads/2011/05/DataFlow1.png) As you can see in this finished data flow the aggregate transform took 12,627,608 records and turned it into 3 records.  This means that we just read in over 12 million records from the source database into memory just so that we could load 3 records into the destination!  Wouldn't you rather take care of all that work up front on the SQL Server side of things?  This is why using a source query is so important in many cases.  There will be times when you can't get around using some of these "bad" transforms, but for the most part it can be done in a source query.  I can't stress enough use the right tool for the job.  In this case it would be a combination of SQL (for the source query and aggregation) and SSIS (for transferring the data from one server to another.. ![](https://images.bradleyschacht.com/wp-content/uploads/2011/05/DataFlow2.png) One other thing that I hope I stressed enough to everyone is good naming conventions.  I joked about naming all my packages "package" so I know what they are and all my SQL tasks Execute SQL so I knew what is was doing.  If you don't believe me that good naming conventions are a requirement then lets chat in about 6 months once you have had to do some troubleshooting on your production environment. I'm sure it will be a piece of cake and a quick solution to determine what went wrong with Data Flow Task 23 inside of Package58. One final thought before I go: making the lines straight does not make your data flow faster because there are less turns and moving the source closer to the destination does not speed things up because the data has less distance to travel.  But those things do make the data flow pretty and helps my OCD a lot!  :) Thanks again for coming out, I had a lot of fun and a wonderful day.  I hope I get to talk with some of you again soon.  If you're in the Pensacola area come out next month to SQL Saturday.  I will be speaking on SSIS configurations, expressions and variables.  I will also be co-presenting a session on data warehousing with [Devin Knight](http://www.bidn.com/blogs/devinknight "Devin's Blog") ([Twitter](http://twitter.com/#!/knight_devin "Devin's Twitter Account")) and then doing Pulp SQL with [Jorge Segarra](http://www.sqlchicken.com "Jorge Segarra's Blog") (AKA SQLChicken| [Twitter](http://twitter.com/#!/sqlchicken "Jorge's Twitter Account")) where we will talk about project blunders so you can avoid the mistakes of others.  WARNING: Pulp SQL is for adults only and may or may not result in random fight sequences between Jorge and myself, also the front 2 rows are considered a splash zone, bring a poncho.

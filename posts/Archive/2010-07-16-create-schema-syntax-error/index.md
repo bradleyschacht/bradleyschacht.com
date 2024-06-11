@@ -1,0 +1,8 @@
+---
+title: "CREATE SCHEMA Syntax Error"
+date: "2010-07-16"
+categories: 
+  - "sql-server"
+---
+
+Recently while creating a script to migrate the new holding tables over to the stage and production machines I ran into a little issue.  The holding table we are using in this case houses several different sets of data for our migration project.  Tables that are used only for going from the old system to the new (which will be going away in a few months) and tables that will be used in the future while on the new system.  In order to keep these tables separated we decided put them in different schemas inside the holding database.  For this instance they will be called leaving and future.  First we are checking to see if schema already exists, which is not an issue. IF NOT EXISTS (SELECT \* FROM INFORMATION\_SCHEMA.SCHEMATA WHERE SCHEMA\_NAME = 'Current') From there we need to create the schema if it doesn't already exist, also not an issue.  A simple piece of code: CREATE SCHEMA Current The entire code would logically be the combination of the two.  However, if you run that, an error will occur saying there is "Incorrect syntax near the keyword 'SCHEMA'".  The reason for this is that the CREATE SCHEMA command has to be the first command that is given.  If you do want to check to see if a schema already exists before trying to create it there is luckily a way around that. Simply replace CREATE SCHEMA Current with EXEC 'CREATE SCHEMA Current' and everything will run without any errors.  The final code is listed below: IF NOT EXISTS (SELECT \* FROM INFORMATION\_SCHEMA.SCHEMATA WHERE SCHEMA\_NAME = 'Current') EXEC 'CREATE SCHEMA Current'

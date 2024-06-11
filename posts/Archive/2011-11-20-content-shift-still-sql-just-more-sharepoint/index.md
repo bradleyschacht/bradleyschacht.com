@@ -1,0 +1,8 @@
+---
+title: "Content Shift, Still SQL, Just More SharePoint"
+date: "2011-11-20"
+categories: 
+  - "professional-development"
+---
+
+Many of you may have notice that I have been a little inconsistent with my posts lately. It's been a crazy couple of months. I just want to make everyone aware of a couple of things I'm about to do on the blog here. It's not really going to be anything life-changing but it will affect some of the content. I'm in the process of looking for a new host. If I move that may affect some of the URLs that I currently have. I'll do my best to keep them intact but in case you have a bookmark that stops working just head back over the blog and do a quick search on there. I'll be sure to make a post whenever the move happens, if it happens, that way everyone is aware. Another thing I want to make everyone aware of is a possible shift in some of the content. And by possible I mean almost definitely. I will still very much be blogging about SQL and BI. However it looks like I'm going to be starting to do a lot more of a deep dive into SharePoint. I'm pretty excited about it and I can't wait to start posting some new content. I'll be posting everything from general set up to server maintenance to scale out application set up to BI inside SharePoint etc. So if you're someone who works with SharePoint be on the lookout for a lot of cool new stuff. Going into 2012 I'm also going to expand my speaking engagements from the usual integration services topics to be more SharePoint centric. It should be some fun stuff. I'm really looking forward to it and I hope that you guys will stick with me through the crazy ride!!

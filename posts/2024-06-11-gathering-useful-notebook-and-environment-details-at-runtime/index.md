@@ -7,6 +7,7 @@ tags:
   - "scripts"
   - "syndication"
 slug: "gathering-useful-notebook-and-environment-details-at-runtime"
+cover: "../../media/images/cover-images/fabric-spark.png"
 ---
 
 I was recently working on some tests where I needed to gather some Spark configuration information at runtime to validate that the correct environment was being used (number of executors in my case) and to log some execution details so I could look up usage in the Fabric Capacity Metrics app (the spark app name is key).

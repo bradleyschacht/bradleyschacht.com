@@ -1,0 +1,10 @@
+---
+title: "SELECT COUNT(*) vs COUNT(1) vs COUNT(ColumnName)"
+date: "2011-09-15"
+categories: 
+  - "sql-server"
+---
+
+![](https://images.bradleyschacht.com/wp-content/uploads/2011/09/ExecutionPlan.png)
+
+What is the difference between COUNT(\*), COUNT(1) and COUNT(_ColumnName_)? A mystery that will never be known… ok that was a lie, but the rest of this blog is not a lie, just to be clear.  :) COUNT(\*) – Number of records in the table regardless of NULL values and duplicates COUNT(1) – Number of records in the table regardless of NULL values and duplicates \*\***IMPORTANT NOTE:** The 1 does NOT refer to an ordinal location of a column. This will not count the records in the first column of the table as COUNT(_ColumnName_) does.\*\* COUNT(_ColumnName_) or COUNT(ALL _ColumnName_) – Number of non-NULL values COUNT(DISTINCT _ColumnName_) – Number of distinct non-NULL values I ran counts on a pretty good size table of 13+ million records and came up with both COUNT(\*) and COUNT(1) executing with the same CPU time and elapsed time. Occasionally COUNT(\*) would have a higher CPU time and sometimes COUNT(1) would have a higher CPU time. But neither was drastically different from the other. In addition to the statistics from the run if you look at the execution plans for both of these two they will be the exact same, providing further evidence that they behave the same. So from what I can conclude and have read from other sources online they are both essentially the same thing. Conclusion: COUNT(\*) and COUNT(1) are the same. From what I understand this MAY have been an issue with Oracle where the query engine would treat them different, but I can’t confirm that just thought I would toss it out there for argument sake. Those same sources also say that has been resolved and they both function the same now. Also note that COUNT\_BIG works exactly the same as COUNT it just returns the value in the form of a big integer instead of a regular integer. Have you seen these same results or do you have evidence to the contrary?  Sound off in the comments!

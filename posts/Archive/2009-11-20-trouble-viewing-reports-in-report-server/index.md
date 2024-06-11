@@ -1,0 +1,8 @@
+---
+title: "Trouble Viewing Reports in Report Server"
+date: "2009-11-20"
+categories: 
+  - "business-intelligence"
+---
+
+![](https://images.bradleyschacht.com/wp-content/uploads/2011/12/Reports1.png) Have you ever opened your report server only to find a blank section of nothing-ness where your reports should be?  The solution to your problem is more than likely in the permissions.  The easiest fix for this situation is to right click on IE and select Run As Administrator.  There are, however, ways around having to run IE as an administrator each time you want to view reports.  If disabling UAC is not an option you can try to do the following: 1. Run Internet Explorer as Administrator (Right Click on IE and select Run as Administrator) 2. Log into the report manager by going to localhost/reports 3. Select 'Site Settings' (Next to Home and Help in the top right corner) 4. Click on Security on the left panel 5. Select New Role Assignment 6. Add the desired user name in the text field and check the box next to System Administrator ![](https://images.bradleyschacht.com/wp-content/uploads/2011/12/Reports2.png) Once this is completed add the report server to your trusted sites list in IE.  To do this open the Tools menu and select the security tab from Internet Options. Be sure to uncheck the box next to Enable Protected Mode for trusted sites.  IE needs to be running with Protected Mode off for this to work properly. ![](https://images.bradleyschacht.com/wp-content/uploads/2011/12/Reports3.png) This is a combination issue of UAC and permissions settings.  If you can't make these changes in you environment, you may be stuck with having to Run as Administrator every time you want to view the report server.

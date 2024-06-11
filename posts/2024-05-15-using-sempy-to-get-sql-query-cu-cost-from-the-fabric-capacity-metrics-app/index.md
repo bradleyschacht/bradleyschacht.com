@@ -7,6 +7,7 @@ tags:
   - "scripts"
   - "syndication"
 slug: "using-sempy-to-get-sql-query-cu-cost-from-the-fabric-capacity-metrics-app"
+cover: "../../media/images/cover-images/fabric.png"
 ---
 
 **Download the notebook used in this post from my GitHub account here:**  

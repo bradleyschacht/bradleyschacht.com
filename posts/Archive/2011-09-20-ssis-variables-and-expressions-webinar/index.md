@@ -1,0 +1,9 @@
+---
+title: "SSIS Variables and Expressions Webinar"
+date: "2011-09-20"
+categories: 
+  - "business-intelligence"
+  - "speaking"
+---
+
+![](https://images.bradleyschacht.com/wp-content/uploads/2011/06/PWTrainingOnTheTs.png) Looks like it is that time again... for me to present a FREE webinar for good ol' Pragmatic Works today at 11AM eastern standard time. The topic today will be SSIS variables and expressions. I [previously did a webinar](https://bradleyschacht.com/ssis-webinar-recording-is-up "SSIS Configurations, Variables and Expressions") on a similar topic that also included configurations. If you were in that webinar then you are well aware that we really only got to go into detail on configurations and not the other two topics. So today is completely dedicated to variables and expressions. Feel free to bring your questions as I will be leaving some time at the end of the session today to answer those!  Below are the details along with the registration link.  Don't forget it is free! Who: Me When: September  20, 2011 at 11AM Eastern Where: Online: [Register Here](https://pragmaticworks.com/ "Webinar Registration") (Live via Go To Webinar) What: Building a dynamic SSIS package can be a daunting task. There are countless locations where expressions and variables can be used throughout SSIS. In this session Brad will walk you through the basics of variables including how SSIS deals with variable scoping. We will then take a look the unique expression language used in SSIS and how that can help in situations such as dynamic file names, connection strings and data cleansing. Next we will bring it all together and show how powerful SSIS can truly be by combing the functionality of variables and expressions. Topics will include user variables, system variables, the expression language, as well as where to use expressions and variables in the control flow, data flow and even event handlers to build a useful custom auditing solution.

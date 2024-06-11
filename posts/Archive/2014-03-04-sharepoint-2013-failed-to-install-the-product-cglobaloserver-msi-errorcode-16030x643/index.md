@@ -1,0 +1,8 @@
+---
+title: "SharePoint 2013 - Failed to install the product: D:globaloserver.msi ErrorCode: 1603(0x643)"
+date: "2014-03-04"
+categories: 
+  - "sharepoint"
+---
+
+I often do my SharePoint setups on virtual machines since I need to build them up and tear them down frequently. Hyper-V is a beauty when it comes to demo environments. A few weeks ago I was doing an install and got an error that was absolutely no help. \[error\]Microsoft SharePoint Server 2013 encountered an error during setup.\[/error\] ![](https://images.bradleyschacht.com/wp-content/uploads/2014/02/SharePoint-Installation-Error.png) Well thanks. That's completely unhelpful. To the installation logs!! ![](https://images.bradleyschacht.com/wp-content/uploads/2014/02/Change-from-1-to-2-CPUs-To-Fix.png) \[error\]Error: Failed to install product: D:globaloserver.MSI ErrorCode: 1603(0x643).\[/error\] Note that your error message may list a different drive letter. Well that's a little better but not 100% helpful. Luckily I've run into this in the past and the fix for me was pretty simple at the time. I mentioned the fact that this was a virtual environment earlier for a reason. I setup my VMs with only a single virtual processor by default when I'm doing configuration. All I needed to do was switch from 1 processor to 2 (or 4, or 6, I've found any even number will work fine in my tests) and everything worked perfectly. After the installation if you want to switch back down to 1 processor everything should continue to function properly. I've seen other people talking about modifying configuration files or registry entries, but if I can fix the issue just by changing the number of virtual processors then I'm going for that! Happy SharePoint adventures!

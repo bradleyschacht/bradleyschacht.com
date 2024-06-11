@@ -1,0 +1,8 @@
+---
+title: "SharePoint 2010 on SQL 2012 Configuration Failed"
+date: "2013-05-29"
+categories: 
+  - "sharepoint"
+---
+
+Recently while doing an installation of SharePoint 2010 on a Windows Server 2008 R2 server with a SQL Server 2012 back end I ran into a small roadblock. The following error popped up as I was running the product configuration wizard.   \[error\] Failed to create the configuration database. An exceptin of type System.Data.SqlClient.SqlException was thrown. Additional exception information: Could not find stored procedure 'sp\_dboption'. \[/error\]   After a little searching I found out that the installation media that was downloaded for us was SharePoint 2010, not SharePoint 2010 SP1. In order to do the installation with a SQL 2012 database server you must be using SharePoint 2010 Service Pack 1. After downloading and installing the service pack on the server everything went smoothly. There are details in this Microsoft Knowledge Base article: [http://support.microsoft.com/kb/2460045](http://support.microsoft.com/kb/2460045) ![](https://images.bradleyschacht.com/wp-content/uploads/2013/05/SP2010-Install-Error-Solved-By-SP1.png) \[notice\]You do not need to download the ISO from MSDN that has service pack 1 bundled with the installer. If you have already installed the bits for SharePoint 2010 on the server simply download and install service pack 1 then rerun the configuration wizard.\[/notice\] \[notice\]SharePoint 2010 does NOT support installation on Windows Server 2012 until SP2 which does not have a target date at the time of writing of this blog.\[/notice\]

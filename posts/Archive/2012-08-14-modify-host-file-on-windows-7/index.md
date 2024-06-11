@@ -1,0 +1,8 @@
+---
+title: "Modify Host File on Windows 7"
+date: "2012-08-14"
+categories: 
+  - "windows"
+---
+
+Modifying the Windows host file can be a great way to ensure that you don't accidentally modify production while doing development or just redirecting traffic on your computer. For instance, while at a client's office I was able to access a server by entering just the server name, but when working remote via VPN I was required to enter IP address or the server. Luckily while on the network I could access the server by IP also. All the SSIS packages used the server name, so it made testing from outside the office a bit of a pain. The Windows host file will allow you to enter a host name and associated IP address. The host file can be found at C:windowssystem32driversetchosts on Windows 7. To edit the host file head over to notepad and open that file. If you ping google.com and yahoo.com you will get the IP addresses of 74.125.227.0 and 209.191.122.70 respectively. ![](https://images.bradleyschacht.com/wp-content/uploads/2012/08/hostfile1.png) However, I can modify the host file to redirect google.com to the IP address of yahoo.com ![](https://images.bradleyschacht.com/wp-content/uploads/2012/08/hostfile2.png) Now when I ping google.com I can see that it is trying to use the IP for yahoo.com ![](https://images.bradleyschacht.com/wp-content/uploads/2012/08/hostfile3.png) ...and when I go to google.com in my web browser it loads the Yahoo homepage. This can be very useful for testing. If you want to make sure that you don't hit the production server simply redirect the name of the production server to the IP address of your development server and away you go! ![](https://images.bradleyschacht.com/wp-content/uploads/2012/08/hostfile41.png)

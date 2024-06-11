@@ -1,0 +1,9 @@
+---
+title: "Presentation Update: New BI Features in SharePoint 2013"
+date: "2013-12-06"
+categories: 
+  - "business-intelligence"
+  - "speaking"
+---
+
+It's time for another _**free**_ webinar!! Whether you like it or not SharePoint is here to stay! With every release of SQL Server or SharePoint (which follow different release cycles) the feature set for Business Intelligence professionals gets more fragmented and more complicated. If I want to get Feature A what combination of SQL Server and SharePoint do I need? All valid questions. I'll use this session to walk you through everything you can do with the combination of SQL Server 2012 and SharePoint 2013. Check out the details and a link to register below. Be sure to register even if you aren't able to attend so you can get a link to the recording and watch it later. **Registration Link:** [http://www.pragmaticworks.com/LearningCenter/FreeTrainingWebinars/FutureWebinars.aspx?ResourceId=609](https://pragmaticworks.com/) **Title:** New BI Features in SharePoint 2013 **Date:** February 20, 2014 **Description:** SharePoint 2013 is out and ready for prime time with new features and enhancements. Brad will show you some of the welcome changes available in Central Administration centered on streamlined configuration and security of business intelligence applications. Then it's all about the users as we showcase some major enhancements to PerformancePoint and Excel services. We will walk step by step through a few of the amazing new features in Reporting Services provided by the 2012 release of SQL Server. This is a must see session for every SharePoint administrator and anyone spending time developing SharePoint BI content. Whether you’re looking for a reason to upgrade or are just curious about the future, you won't want to miss this demo filled session!
