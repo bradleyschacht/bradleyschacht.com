@@ -11,7 +11,7 @@ cover: "../../media/images/cover-images/fabric.png"
 ---
 
 **Download the notebook used in this post from my GitHub account here:**  
-[Get SQL query CUs from Capacity Metrics.ipynb](https://github.com/bradleyschacht/resources/blob/main/Fabric/Capacity%20Metrics/Get%20SQL%20query%20CUs%20from%20Capacity%20Metrics.ipynb)
+[Get SQL query CUs from Capacity Metrics.ipynb](https://github.com/bradleyschacht/resources/blob/main/Fabric%20Capacity%20Metrics/Get%20SQL%20query%20CUs%20from%20Capacity%20Metrics.ipynb)
 
 A frequent inquiry from customers goes something like this: "I ran a query on the \[data warehouse or SQL analytics endpoint\] and now I want to know how much that query cost me."
 
@@ -141,7 +141,7 @@ The magic that makes this happen is [Semantic Link](https://learn.microsoft.com/
 
 There you have it! Now instead of looking up each query individually, you can just run a simple notebook to look up the CU usage in bulk! Let's wrap up with some key things to be aware of.
 
-1. Here is a link to get a copy of the notebook ([Get SQL CUs from Capacity Metrics](https://github.com/bradleyschacht/resources/blob/main/Fabric/Capacity%20Metrics/Get%20SQL%20query%20CUs%20from%20Capacity%20Metrics.ipynb)) from my GitHub account.
+1. Here is a link to get a copy of the notebook ([Get SQL CUs from Capacity Metrics](https://github.com/bradleyschacht/resources/blob/main/Fabric%20Capacity%20Metrics/Get%20SQL%20query%20CUs%20from%20Capacity%20Metrics.ipynb)) from my GitHub account.
 
 3. You still need Capacity Metrics. Make note of the workspace name and semantic model name. Those are needed.
 
